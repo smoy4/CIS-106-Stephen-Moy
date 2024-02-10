@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-06 06:44:55 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUdLSk1KQ1I7MjAyNC0wMi0wNjswNjoxNjo0OCBQTTszMzgw"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUdLSk1KQ1I7MjAyNC0wMi0wNjswNjo0NDo1NSBQTTszOzM0ODk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="CostsFixed" type="Real" array="False" size=""/>
+            <declare name="UnitPrice" type="Real" array="False" size=""/>
+            <declare name="UnitCost" type="Real" array="False" size=""/>
+            <declare name="BreakEvenPoint" type="Real" array="False" size=""/>
+            <input variable="CostsFixed"/>
+            <input variable="UnitPrice"/>
+            <input variable="UnitCost"/>
+            <assign variable="BreakEvenPoint" expression="CostsFixed / (UnitPrice - UnitCost)"/>
+            <output expression="&quot;The Business Break-Even Point is: &quot; &amp;BreakEvenPoint" newline="False"/>
+            <output expression="&quot; minimum units you need to sell per period to keep your business afloat.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

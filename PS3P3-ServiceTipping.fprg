@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-06 06:44:01 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUdLSk1KQ1I7MjAyNC0wMi0wNjswNTo0MzoyNSBQTTszMzc0"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUdLSk1KQ1I7MjAyNC0wMi0wNjswNjo0NDowMSBQTTsyOzM0Nzk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="MealTotal" type="Real" array="False" size=""/>
+            <input variable="MealTotal"/>
+            <declare name="ServiceAverage" type="Real" array="False" size=""/>
+            <declare name="ServiceGood" type="Real" array="False" size=""/>
+            <declare name="ServiceExceptional" type="Real" array="False" size=""/>
+            <assign variable="ServiceAverage" expression="MealTotal * 0.15"/>
+            <assign variable="ServiceGood" expression="MealTotal * 0.18"/>
+            <assign variable="ServiceExceptional" expression="MealTotal * 0.20"/>
+            <declare name="FinalBillAverage" type="Real" array="False" size=""/>
+            <declare name="FinalBillGood" type="Real" array="False" size=""/>
+            <declare name="FinalBillExceptional" type="Real" array="False" size=""/>
+            <assign variable="FinalBillAverage" expression="MealTotal + ServiceAverage"/>
+            <assign variable="FinalBillGood" expression="MealTotal + ServiceGood"/>
+            <assign variable="FinalBillExceptional" expression="MealTotal + ServiceExceptional"/>
+            <output expression="&quot;Average Service (15%)&quot;" newline="True"/>
+            <output expression="&quot;Meal Total: $&quot; &amp;MealTotal" newline="True"/>
+            <output expression="&quot;Tip: $&quot; &amp;ServiceAverage" newline="True"/>
+            <output expression="&quot;Meal Total with 15% Tip: $&quot; &amp;FinalBillAverage" newline="True"/>
+            <output expression="&quot;Good Service (18%)&quot;" newline="True"/>
+            <output expression="&quot;Meal Total: $&quot; &amp;MealTotal" newline="True"/>
+            <output expression="&quot;Tip: $&quot; &amp;ServiceGood" newline="True"/>
+            <output expression="&quot;Meal Total with 18% Tip: $&quot; &amp;FinalBillGood" newline="True"/>
+            <output expression="&quot;Exceptional Service (20%)&quot;" newline="True"/>
+            <output expression="&quot;Meal Total: $&quot; &amp;MealTotal" newline="True"/>
+            <output expression="&quot;Tip: $&quot; &amp;ServiceExceptional" newline="True"/>
+            <output expression="&quot;Meal Total with 20% Tip: $&quot; &amp;FinalBillExceptional" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

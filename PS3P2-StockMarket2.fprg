@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-06 06:43:43 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUdLSk1KQ1I7MjAyNC0wMi0wNjswNToxNzozOSBQTTszMzgw"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUdLSk1KQ1I7MjAyNC0wMi0wNjswNjo0Mzo0MyBQTTszOzM0ODU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Please input stock current price and stock purchase price in WHOLE USD.&quot;" newline="True"/>
+            <declare name="StockPurchasePrice" type="Integer" array="False" size=""/>
+            <input variable="StockPurchasePrice"/>
+            <declare name="StockCurrentPrice" type="Integer" array="False" size=""/>
+            <input variable="StockCurrentPrice"/>
+            <declare name="StockShareQTY" type="Integer" array="False" size=""/>
+            <input variable="StockShareQTY"/>
+            <declare name="StockPortfolioValue" type="Integer" array="False" size=""/>
+            <assign variable="StockPortfolioValue" expression="((StockCurrentPrice - StockPurchasePrice) * StockShareQTY)"/>
+            <if expression="StockPortfolioValue &gt; 0">
+                <then>
+                    <output expression="&quot;Congratulations! By investing in this stock, you made $&quot; &amp;StockPortfolioValue" newline="True"/>
+                </then>
+                <else>
+                    <if expression="StockPortfolioValue = 0">
+                        <then>
+                            <output expression="&quot;Your investments have not made any money yet. Keep your money invested longer to see what happens!&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Your portfolio value is: $&quot; &amp;StockPortfolioValue" newline="True"/>
+                            <output expression="&quot;Your investments have lost money, but this could be a golden opportunity to buy more as the stock will most likely rebound!&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
