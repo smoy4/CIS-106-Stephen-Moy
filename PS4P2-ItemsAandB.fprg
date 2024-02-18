@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-18 12:56:16 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTBQT0pOMjg7MjAyNC0wMi0xODsxMjo0MDoyMSBBTTszMjk4"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTBQT0pOMjg7MjAyNC0wMi0xODsxMjo1NjoxNiBBTTszOzM0MTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ItemChoice" type="String" array="False" size=""/>
+            <declare name="UnitPrice" type="Real" array="False" size=""/>
+            <declare name="ItemQTY" type="Integer" array="False" size=""/>
+            <declare name="ExtendedPrice" type="Real" array="False" size=""/>
+            <output expression="&quot;Instructions: Enter 'A' for Item A. Enter anything else for Item B.&quot;" newline="True"/>
+            <output expression="&quot;Which item do you want to check?&quot;" newline="True"/>
+            <input variable="ItemChoice"/>
+            <if expression="ItemChoice == &quot;A&quot;">
+                <then>
+                    <output expression="&quot;You chose Item A, which is $10 / unit.&quot;" newline="True"/>
+                    <assign variable="UnitPrice" expression="10"/>
+                </then>
+                <else>
+                    <assign variable="ItemChoice" expression="&quot;B&quot;"/>
+                    <output expression="&quot;You chose Item B, which is $20 / unit.&quot;" newline="True"/>
+                    <assign variable="UnitPrice" expression="20"/>
+                </else>
+            </if>
+            <output expression="&quot;How many units do you want to buy? Enter an integer: &quot;" newline="True"/>
+            <input variable="ItemQTY"/>
+            <assign variable="ExtendedPrice" expression="UnitPrice * ItemQTY"/>
+            <output expression="&quot;You chose Item: &quot; &amp;ItemChoice" newline="True"/>
+            <output expression="&quot;Unit Price = $&quot; &amp;UnitPrice" newline="False"/>
+            <output expression="&quot; / unit&quot;" newline="True"/>
+            <output expression="&quot;Item QTY = &quot; &amp;ItemQTY" newline="True"/>
+            <output expression="&quot;Extended Price = $&quot; &amp;ExtendedPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

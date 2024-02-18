@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-18 12:38:19 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTBQT0pOMjg7MjAyNC0wMi0xNzsxMTo0NDoyOCBQTTszMzIy"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTBQT0pOMjg7MjAyNC0wMi0xODsxMjozODoxOSBBTTs0OzM0MjM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ApplianceName" type="String" array="False" size=""/>
+            <declare name="ApplianceCost" type="Real" array="False" size=""/>
+            <declare name="WarranteeCost" type="Real" array="False" size=""/>
+            <declare name="TotalCost" type="Real" array="False" size=""/>
+            <output expression="&quot;What appliance are you purchasing?&quot;" newline="True"/>
+            <input variable="ApplianceName"/>
+            <output expression="&quot;How much is this appliance (in USD)?&quot;" newline="True"/>
+            <input variable="ApplianceCost"/>
+            <if expression="ApplianceCost == 0">
+                <then>
+                    <assign variable="WarranteeCost" expression="0"/>
+                    <output expression="&quot;Invalid response. The appliance must cost something!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="ApplianceCost &gt; 1000">
+                        <then>
+                            <assign variable="WarranteeCost" expression="0.1 * ApplianceCost"/>
+                            <output expression="&quot;A warrantee cost of 10% of the appliance cost has been applied.&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <assign variable="WarranteeCost" expression="0.05 * ApplianceCost"/>
+                            <output expression="&quot;A warrantee cost of 5% of the appliance cost has been applied.&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="TotalCost" expression="ApplianceCost + WarranteeCost"/>
+            <output expression="&quot;Appliance: &quot; &amp;ApplianceName" newline="True"/>
+            <output expression="&quot;Appliance Cost = $&quot; &amp;ApplianceCost" newline="True"/>
+            <output expression="&quot;Warrantee Cost = $&quot; &amp;WarranteeCost" newline="True"/>
+            <output expression="&quot;Total Cost = $&quot; &amp;TotalCost" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

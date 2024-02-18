@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-18 12:39:50 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTBQT0pOMjg7MjAyNC0wMi0xNzsxMTowODo1MCBQTTszMzE3"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTBQT0pOMjg7MjAyNC0wMi0xODsxMjozOTo1MCBBTTs3OzM0MjI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="BookQTY" type="Integer" array="False" size=""/>
+            <declare name="BookUnitPrice" type="Real" array="False" size=""/>
+            <declare name="Subtotal" type="Real" array="False" size=""/>
+            <output expression="&quot;How many books do you plan to buy? Enter an integer: &quot;" newline="True"/>
+            <input variable="BookQTY"/>
+            <output expression="&quot;How much does each book cost (in USD)?&quot;" newline="True"/>
+            <input variable="BookUnitPrice"/>
+            <assign variable="Subtotal" expression="BookQTY * BookUnitPrice"/>
+            <declare name="Shipping" type="Real" array="False" size=""/>
+            <if expression="Subtotal == 0">
+                <then>
+                    <assign variable="Shipping" expression="0"/>
+                    <output expression="&quot;Your cart is empty!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="Subtotal &gt; 50">
+                        <then>
+                            <assign variable="Shipping" expression="0"/>
+                            <output expression="&quot;Your qualify for free shipping by exceeding $50 in books!&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <assign variable="Shipping" expression="25"/>
+                            <output expression="&quot;A shipping charge of $25 has been applied&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <assign variable="Total" expression="Subtotal + Shipping"/>
+            <output expression="&quot;Subtotal = $&quot; &amp;Subtotal" newline="True"/>
+            <output expression="&quot;Shipping = $&quot; &amp;Shipping" newline="True"/>
+            <output expression="&quot;Total = $&quot; &amp;Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
