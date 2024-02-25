@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-25 12:51:51 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTA4REU2MTk7MjAyNC0wMi0yNDsxMTo1Mjo0NCBQTTszMjUz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTA4REU2MTk7MjAyNC0wMi0yNTsxMjo1MTo1MSBBTTsxOzMzNDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="WidgetQTY" type="Integer" array="False" size=""/>
+            <declare name="WidgetUnitPrice" type="Real" array="False" size=""/>
+            <declare name="ExtendedPrice" type="Real" array="False" size=""/>
+            <declare name="TaxAmount" type="Real" array="False" size=""/>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <output expression="&quot;Please enter the number of widgets (whole numbers, at least greater than 0).&quot;" newline="True"/>
+            <input variable="WidgetQTY"/>
+            <if expression="WidgetQTY &gt; 10000">
+                <then>
+                    <assign variable="WidgetUnitPrice" expression="10"/>
+                    <output expression="&quot;Unit Price = $10.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="WidgetQTY &gt;= 5000">
+                        <then>
+                            <assign variable="WidgetUnitPrice" expression="20"/>
+                            <output expression="&quot;Unit Price = $20.&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="WidgetQTY &gt;= 0">
+                                <then>
+                                    <assign variable="WidgetUnitPrice" expression="30"/>
+                                    <output expression="&quot;Unit Price = $30.&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Invalid Widget QTY! It cannot be less than 0!&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="ExtendedPrice" expression="WidgetQTY * WidgetUnitPrice"/>
+            <output expression="&quot;The Extended Price (pre-tax) is: $&quot; &amp;ExtendedPrice" newline="True"/>
+            <assign variable="TaxAmount" expression="ExtendedPrice * 0.07"/>
+            <output expression="&quot;The total taxes (7% of extended price) applied is: $&quot; &amp;TaxAmount" newline="True"/>
+            <assign variable="Total" expression="ExtendedPrice + TaxAmount"/>
+            <output expression="&quot;The Total is: $&quot; &amp;Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-25 02:35:12 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTA4REU2MTk7MjAyNC0wMi0yNTswMTozMzoxMCBBTTszMjMw"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTA4REU2MTk7MjAyNC0wMi0yNTswMjozNToxMiBBTTszOzMzNDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Principal" type="Real" array="False" size=""/>
+            <declare name="Year" type="Integer" array="False" size=""/>
+            <declare name="InterestRate" type="Real" array="False" size=""/>
+            <declare name="FirstYearInterest" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the principal amount: $&quot;" newline="True"/>
+            <input variable="Principal"/>
+            <output expression="&quot;The 5-Year and 10-Year term offers the highest returns while any other year are viable options, but yield lower returns. Enter your desired term length (positive integer): &quot;" newline="True"/>
+            <input variable="Year"/>
+            <if expression="Principal &gt; 100000 and Year = 5">
+                <then>
+                    <assign variable="InterestRate" expression="0.06"/>
+                </then>
+                <else>
+                    <if expression="Principal &gt;= 50000 and Principal &lt;= 100000 and Year = 10">
+                        <then>
+                            <assign variable="InterestRate" expression="0.05"/>
+                        </then>
+                        <else>
+                            <if expression="Principal &gt;= 50000 and Principal &lt;= 100000 and Year = 5">
+                                <then>
+                                    <assign variable="InterestRate" expression="0.04"/>
+                                </then>
+                                <else>
+                                    <assign variable="InterestRate" expression="0.02"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="FirstYearInterest" expression="Principal * (1+InterestRate)"/>
+            <output expression="&quot;Principal = $&quot; &amp;Principal" newline="True"/>
+            <output expression="&quot;InterestRate (decimal) =&quot; &amp;InterestRate" newline="True"/>
+            <output expression="&quot;First Year Interest = $&quot; &amp;FirstYearInterest" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
