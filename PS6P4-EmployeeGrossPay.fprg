@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-02 09:18:24 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLU5HMjZTTzk7MjAyNC0wMy0wMjswODo0NTozOCBQTTszMzMy"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLU5HMjZTTzk7MjAyNC0wMy0wMjswOToxODoyNCBQTTsxMTszNDg1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ExecuteProgram" type="String" array="False" size=""/>
+            <declare name="LastName" type="String" array="False" size=""/>
+            <declare name="HoursWorked" type="Real" array="False" size=""/>
+            <declare name="HourlyRate" type="Real" array="False" size=""/>
+            <declare name="GrossPay" type="Real" array="False" size=""/>
+            <declare name="EmployeeCount" type="Integer" array="False" size=""/>
+            <declare name="GrossPaySum" type="Real" array="False" size=""/>
+            <declare name="GrossPayAverage" type="Real" array="False" size=""/>
+            <assign variable="EmployeeCount" expression="0"/>
+            <assign variable="GrossPaySum" expression="0.00"/>
+            <output expression="&quot;Do you want to use the program to calculate employee gross pay?&quot;" newline="True"/>
+            <input variable="ExecuteProgram"/>
+            <while expression="ExecuteProgram == &quot;Yes&quot; or ExecuteProgram == &quot;YES&quot; or ExecuteProgram == &quot;Y&quot; or ExecuteProgram == &quot;y&quot;">
+                <output expression="&quot;Enter Employee Last Name: &quot;" newline="True"/>
+                <input variable="LastName"/>
+                <output expression="&quot;Enter the number of hours you worked this week: &quot;" newline="True"/>
+                <input variable="HoursWorked"/>
+                <output expression="&quot;What is your hourly rate?&quot;" newline="True"/>
+                <input variable="HourlyRate"/>
+                <if expression="HoursWorked &gt; 40">
+                    <then>
+                        <assign variable="GrossPay" expression="((HoursWorked - 40) * 1.5 * HourlyRate) + (HourlyRate * 40)"/>
+                    </then>
+                    <else>
+                        <assign variable="GrossPay" expression="HoursWorked * HourlyRate"/>
+                    </else>
+                </if>
+                <output expression="&quot;Employee &quot; &amp;LastName" newline="False"/>
+                <output expression="&quot;, your Gross Pay for this week is: $&quot; &amp;GrossPay" newline="True"/>
+                <assign variable="EmployeeCount" expression="EmployeeCount + 1"/>
+                <assign variable="GrossPaySum" expression="GrossPaySum + GrossPay"/>
+                <output expression="&quot;Do you want to continue using this program?&quot;" newline="True"/>
+                <input variable="ExecuteProgram"/>
+            </while>
+            <assign variable="GrossPayAverage" expression="GrossPaySum / EmployeeCount"/>
+            <output expression="&quot;Sum of all Gross Pay = $&quot; &amp;GrossPaySum" newline="True"/>
+            <output expression="&quot;Number of Employees = &quot; &amp;EmployeeCount" newline="True"/>
+            <output expression="&quot;Average Gross Pay = $&quot; &amp;GrossPayAverage" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

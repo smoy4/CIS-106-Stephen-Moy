@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-02 08:45:17 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLU5HMjZTTzk7MjAyNC0wMy0wMjswODowNDo1OSBQTTszMzMw"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLU5HMjZTTzk7MjAyNC0wMy0wMjswODo0NToxNyBQTTs5OzM0NDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ExecuteProgram" type="String" array="False" size=""/>
+            <declare name="Quantity" type="Real" array="False" size=""/>
+            <declare name="Price" type="Real" array="False" size=""/>
+            <declare name="ExtendedPrice" type="Real" array="False" size=""/>
+            <declare name="DiscountAmount" type="Real" array="False" size=""/>
+            <declare name="DiscountTotal" type="Real" array="False" size=""/>
+            <declare name="NumberOfOrders" type="Integer" array="False" size=""/>
+            <assign variable="DiscountTotal" expression="0"/>
+            <assign variable="NumberOfOrders" expression="0"/>
+            <declare name="TotalOrderPrice" type="Real" array="False" size=""/>
+            <declare name="AverageDiscountAmount" type="Real" array="False" size=""/>
+            <output expression="&quot;Do you want to continue with this program that calculates total order with discounts? (Yes or No)&quot;" newline="True"/>
+            <input variable="ExecuteProgram"/>
+            <while expression="ExecuteProgram == &quot;Yes&quot; or ExecuteProgram == &quot;YES&quot; or ExecuteProgram == &quot;Y&quot; or ExecuteProgram == &quot;y&quot;">
+                <output expression="&quot;How many do you want to order? (Input Quantity)&quot;" newline="True"/>
+                <input variable="Quantity"/>
+                <output expression="&quot;What is the price of this item? (Enter price in USD)&quot;" newline="True"/>
+                <input variable="Price"/>
+                <assign variable="ExtendedPrice" expression="Quantity * Price"/>
+                <if expression="ExtendedPrice &gt; 10000">
+                    <then>
+                        <assign variable="DiscountAmount" expression="ExtendedPrice * 0.25"/>
+                    </then>
+                    <else>
+                        <assign variable="DiscountAmount" expression="ExtendedPrice * 0.10"/>
+                    </else>
+                </if>
+                <assign variable="TotalOrderPrice" expression="ExtendedPrice - DiscountAMount"/>
+                <assign variable="DiscountTotal" expression="DiscountTotal + DiscountAmount"/>
+                <assign variable="NumberOfOrders" expression="NumberOfOrders + 1"/>
+                <output expression="&quot;Extended Price = $&quot; &amp;ExtendedPrice" newline="True"/>
+                <output expression="&quot;Discount earned = $&quot; &amp;DiscountAmount" newline="True"/>
+                <output expression="&quot;Total Order Amount = $&quot; &amp;TotalOrderPrice" newline="True"/>
+                <output expression="&quot;Do you want to enter another order? (Yes or No)&quot;" newline="True"/>
+                <input variable="ExecuteProgram"/>
+            </while>
+            <output expression="&quot;Total Discounts = $&quot; &amp;DiscountTotal" newline="True"/>
+            <output expression="&quot;Number of Orders Entered = &quot; &amp;NumberOfOrders" newline="True"/>
+            <assign variable="AverageDiscountAmount" expression="DiscountTotal / NumberOfOrders"/>
+            <output expression="&quot;Average Discount Amount = $&quot; &amp;AverageDiscountAmount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

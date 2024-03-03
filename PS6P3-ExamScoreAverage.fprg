@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-02 10:52:30 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLU5HMjZTTzk7MjAyNC0wMy0wMjswOTozODoxOCBQTTszMzMz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLU5HMjZTTzk7MjAyNC0wMy0wMjsxMDo1MjozMCBQTTs5OzM0MzE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ExecuteProgram" type="String" array="False" size=""/>
+            <declare name="LastName" type="String" array="False" size=""/>
+            <declare name="ExamScore1" type="Real" array="False" size=""/>
+            <declare name="ExamScore2" type="Real" array="False" size=""/>
+            <declare name="ExamScoreAverage" type="Real" array="False" size=""/>
+            <declare name="StudentCount" type="Integer" array="False" size=""/>
+            <assign variable="StudentCount" expression="0"/>
+            <output expression="&quot;Do you want to continue with this program that calculates exam score averages? (Yes or No)&quot;" newline="True"/>
+            <input variable="ExecuteProgram"/>
+            <while expression="ExecuteProgram == &quot;Yes&quot; or ExecuteProgram == &quot;YES&quot; or ExecuteProgram == &quot;Y&quot; or ExecuteProgram == &quot;y&quot;">
+                <output expression="&quot;Hello Student, please enter your last name: &quot;" newline="True"/>
+                <input variable="LastName"/>
+                <output expression="&quot;Please enter your first exam score: &quot;" newline="True"/>
+                <input variable="ExamScore1"/>
+                <output expression="&quot;Please enter your second exam score: &quot;" newline="True"/>
+                <input variable="ExamScore2"/>
+                <assign variable="ExamScoreAverage" expression="(ExamScore1 + ExamScore2) / 2"/>
+                <output expression="&quot;Student &quot; &amp;LastName" newline="False"/>
+                <output expression="&quot;, your exam score average is: &quot; &amp;ExamScoreAverage" newline="True"/>
+                <assign variable="StudentCount" expression="StudentCount + 1"/>
+                <output expression="&quot;Do you want to run this program again?&quot;" newline="True"/>
+                <input variable="ExecuteProgram"/>
+            </while>
+            <output expression="&quot;Number of Students who had their exam scores analyzed: &quot; &amp;StudentCount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

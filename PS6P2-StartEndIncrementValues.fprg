@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-02 10:53:37 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLU5HMjZTTzk7MjAyNC0wMy0wMjswOToyNDoxOCBQTTszMzI4"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLU5HMjZTTzk7MjAyNC0wMy0wMjsxMDo1MzozNyBQTTs2OzM0MzY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="StartValue" type="Real" array="False" size=""/>
+            <declare name="EndValue" type="Real" array="False" size=""/>
+            <declare name="IncrementValue" type="Real" array="False" size=""/>
+            <output expression="&quot;This program will allow the user to enter a start value, end value, and incremental value from the keyboard. The numbers will be displayed from start value to stop value using the incremental value.&quot;" newline="True"/>
+            <output expression="&quot;Plese enter the start value: &quot;" newline="True"/>
+            <input variable="StartValue"/>
+            <output expression="&quot;Plese enter the end value: &quot;" newline="True"/>
+            <input variable="EndValue"/>
+            <input variable="IncrementValue"/>
+            <while expression="StartValue &lt;= EndValue">
+                <output expression="&quot; &quot; &amp;StartValue" newline="False"/>
+                <output expression="&quot;,&quot;" newline="False"/>
+                <assign variable="StartValue" expression="StartValue + IncrementValue"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
