@@ -1,0 +1,14 @@
+Alvino
+100000.00
+Luechtefeld
+40000.00
+James
+150000.00
+Garcia
+120000.00
+Scott
+65000.00
+Shogan
+20000.00
+McKinley
+90000.00
